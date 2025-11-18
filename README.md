@@ -1,108 +1,180 @@
-# React Learning Repository
+#  TikTok Clone (React + MUI)
 
-## 📋 Mô tả Repository
+Dự án **TikTok Clone UI** được xây dựng bằng **React** và **Material UI**
+---
 
-Lưu trữ các ví dụ code, bài tập, và dự án nhỏ để ôn tập các khái niệm cốt lõi của React, từ cơ bản đến nâng cao.
+##  **1. Công nghệ sử dụng**
 
-### 🎯 Mục tiêu
-- Học và thực hành các tính năng của React như Components, Hooks, State Management, Routing, etc...
-- Chia sẻ kiến thức qua các ví dụ đơn giản, dễ chạy.
-- Theo dõi tiến độ học tập qua các commit và branch.
+* **React 18+**
+* **Material UI (MUI v5)**
+* React Router DOM (routing)
+* Intersection Observer API (auto-play video)
+* ES Modules
+* Optional: TypeScript
 
-### 📁 Cấu trúc Repository (Dự kiến)
-react-learning/
-├── javascript/                      # Vanila Javascript
-│   └── …                          
-├── tiktok-clone/                    # thư mục chính cho project TikTok Clone với React
-│   ├── public/
-│   │   ├── index.html
-│   │   └── assets/                  # hình ảnh, icon, video mẫu,...
-│   ├── src/
-│   │   ├── assets/                  # ảnh, video, icon riêng project
-│   │   ├── components/
-│   │   │   ├── Layout/
-│   │   │   │   └── MainLayout.jsx
-│   │   │   ├── SidebarLeft/
-│   │   │   ├── SidebarRight/
-│   │   │   ├── Header/
-│   │   │   ├── VideoCard/
-│   │   │   ├── VideoPlayer/
-│   │   │   └── common/               # các component dùng chung (Button, Avatar, etc)
-│   │   ├── pages/
-│   │   │   ├── Home/
-│   │   │   ├── Following/
-│   │   │   ├── Profile/
-│   │   │   └── Upload/
-│   │   ├── hooks/                    # custom hooks (useVideoAutoPlay, useInfiniteScroll,…)
-│   │   ├── utils/                    # helper functions (formatNumber, fetchMockData,…)
-│   │   ├── data/                     # dữ liệu mẫu (videos, users, tags,…)
-│   │   ├── App.jsx
-│   │   ├── routes.jsx                # định nghĩa routing
-│   │   └── index.jsx                 # render vào DOM
-│   ├── .gitignore
-│   ├── package.json
-│   ├── README.md
-│   └── tsconfig.json?                # TypeScript config
-└── README.md                         # mô tả tổng thể repository
+---
 
+## 📁 **2. Cấu trúc thư mục**
 
+```text
+javascript/                    # vanila JS
+tiktok-clone/
+├── public/
+│   ├── index.html
+│   └── assets/
+│
+├── src/
+│   ├── assets/                # icon, hình, video mock
+│   ├── components/
+│   │   ├── Layout/
+│   │   ├── Header/
+│   │   ├── SidebarLeft/
+│   │   ├── SidebarRight/
+│   │   ├── VideoCard/
+│   │   ├── VideoPlayer/
+│   │   └── common/
+│   │
+│   ├── pages/
+│   │   ├── Home/
+│   │   ├── Following/
+│   │   ├── Profile/
+│   │   └── Upload/
+│   │
+│   ├── hooks/                 # useVideoAutoPlay, useDebounceSearch, …
+│   ├── utils/                 # formatNumber, mock functions, …
+│   ├── data/                  # mock video/user data
+│   ├── App.jsx
+│   ├── routes.jsx
+│   └── index.jsx
+│
+├── .gitignore
+├── package.json
+├── README.md
+└── tsconfig.json (optional)
+```
 
-**Lưu ý**: 
-Repository hiện tại chia làm thư mục chính là Javascript và React. Với Javascript thì chủ yếu sẽ là Syntax nên chỉ cần clone về chạy trực tiếp file index.html.
-Phần React sẽ cập nhật vào các phần bài tập thực hành.
+---
 
+##  **3. Mục tiêu của dự án**
 
-## 🚀 Cách Chạy và Test Code (Dự kiến)
-### Các bước Setup và Chạy
-1. **Clone Repository**:
-   ```bash
-   git clone https://github.com/cuongnmrk/react-learning.git
-   cd tiktok-clone
-   ```
+Tạp trung chủ yếu vào FE
 
-2. **Cài đặt Dependencies**:
-   ```bash
-   # Sử dụng npm
-   npm install
-  
-   ```
-   - Điều này sẽ tải về React, ReactDOM, và các thư viện khác được liệt kê trong `package.json`.
+* Hiểu cách xây dựng UI modular với React + MUI
+* Quản lý layout nhiều cột (3-column layout)
+* Tạo component video có auto-play khi vào viewport
+* Sử dụng mock data để render giao diện như sản phẩm thực tế
+* Nắm cấu trúc dự án chuẩn, dễ mở rộng
 
-3. **Chạy Development Server**:
-   ```bash
-   # Sử dụng npm
-   npm start
+---
 
-   ```
-   - App sẽ tự động mở tại `http://localhost:5173/`.
-   - Hot reload: Mọi thay đổi code sẽ tự động cập nhật trên browser.
+##  **4. Các tính năng chính**
 
-4. **Build cho Production** (nếu cần):
-   ```bash
-   npm run build
-   ```
-   - Tạo folder `build/` với file tối ưu hóa, sẵn sàng deploy (ví dụ lên Netlify, Vercel).
+###  **4.1 Layout 3 cột**
 
-### 🧪 Test Code
-Dự kiến sẽ thêm lúc làm bài tập thực hành
+* **Sidebar trái:** Navigation (For You, Following, LIVE), Suggested accounts
+* **Feed ở giữa:** Danh sách video dạng scroll dọc
+* **Sidebar phải:** Gợi ý nội dung, hashtag, suggested creators
 
-- **Viết test mới**: Tạo file `.test.js` trong thư mục `src/` hoặc `__tests__/`.
-- Ví dụ test đơn giản cho một component:
-  ```jsx
-  // src/components/Button.test.js
-  import { render, screen } from '@testing-library/react';
-  import Button from './Button';
+---
 
-  test('renders button with text', () => {
-    render(<Button>Click me</Button>);
-    const buttonElement = screen.getByText(/Click me/i);
-    expect(buttonElement).toBeInTheDocument();
-  });
-  ```
+###  **4.2 Header**
 
-Nếu chưa có test, bạn có thể thêm bằng cách cài `@testing-library/react` và `@testing-library/jest-dom` vào `package.json`.
+* Logo
+* Search bar (UI + suggested search)
+* Nút Upload
+* Login / Avatar
 
-### 🔧 Troubleshooting
-- **Lỗi port 3000 bị chiếm**: Chạy `npm start` với `--port 3001`.
-- **Dependencies lỗi**: Xóa `node_modules` và `package-lock.json`, rồi `npm install` lại.
-- **Vấn đề với GitHub**: Đảm bảo bạn có quyền truy cập (repo public).
+---
+
+###  **4.3 Video Feed**
+
+* Auto-play/pause khi video xuất hiện hoặc rời viewport
+* VideoPlayer component tách riêng
+* Nút Like / Comment / Share
+* Âm lượng toggle
+
+---
+
+###  **4.4 Trang Profile**
+
+* Avatar + banner
+* Thông tin cơ bản (followers, likes)
+* List video dạng grid
+
+---
+
+###  **4.5 Trang Upload (UI only)**
+
+* Upload button
+* Footer option (privacy, description input)
+* Submit UI (không xử lý backend)
+
+---
+
+##  **5. Cài đặt và chạy project**
+
+### **Yêu cầu**
+
+* Node.js LTS (>=16)
+* npm hoặc yarn
+
+### **Cài đặt**
+
+```bash
+npm install
+# hoặc
+yarn install
+```
+
+### **Chạy project**
+
+```bash
+npm start
+# hoặc
+yarn start
+```
+
+### **Build**
+
+```bash
+npm run build
+```
+
+---
+
+##  **6. Mô tả flow phát triển**
+
+1. Khởi tạo React + MUI
+2. Tạo Layout tổng + Header
+3. Xây Sidebar trái + phải
+4. Tạo VideoCard + VideoPlayer
+5. Tạo feed auto-play bằng Intersection Observer
+6. Tạo trang Profile + Upload
+7. Setup routing
+8. Thêm responsive và polishing UI
+
+---
+
+##  **7. Roadmap mở rộng**
+
+* [ ] Dark mode
+* [ ] Infinite scroll feed
+* [ ] API thực (Node.js hoặc Firebase hoặc Spring Boot)
+* [ ] Profile editable
+* [ ] Social login
+* [ ] State management (Zustand / Redux Toolkit)
+
+---
+
+##  **8. Other**
+
+Trước khi bắt đầu, hãy:
+
+Cần tìm hiểu các concept
+
+   * MUI components
+   * React Router DOM
+   * useEffect / useLayoutEffect
+   * Intersection Observer
+
+---
