@@ -10,23 +10,41 @@ Lưu trữ các ví dụ code, bài tập, và dự án nhỏ để ôn tập c�
 - Theo dõi tiến độ học tập qua các commit và branch.
 
 ### 📁 Cấu trúc Repository (Dự kiến)
-javascript
-tiktok-clone
-│src/
-│  ├── components/
-│  │   ├── Layout/
-│  │   ├── Sidebar/
-│  │   ├── VideoCard/
-│  │   ├── VideoPlayer/
-│  │   └── Header/
-│  ├── pages/
-│  │   ├── Home/
-│  │   ├── Following/
-│  │   └── Profile/
-│  ├── utils/
-│  ├── hooks/
-│  └── App.js
-README.md
+react-learning/
+├── javascript/                      # Vanila Javascript
+│   └── …                          
+├── tiktok-clone/                    # thư mục chính cho project TikTok Clone với React
+│   ├── public/
+│   │   ├── index.html
+│   │   └── assets/                  # hình ảnh, icon, video mẫu,...
+│   ├── src/
+│   │   ├── assets/                  # ảnh, video, icon riêng project
+│   │   ├── components/
+│   │   │   ├── Layout/
+│   │   │   │   └── MainLayout.jsx
+│   │   │   ├── SidebarLeft/
+│   │   │   ├── SidebarRight/
+│   │   │   ├── Header/
+│   │   │   ├── VideoCard/
+│   │   │   ├── VideoPlayer/
+│   │   │   └── common/               # các component dùng chung (Button, Avatar, etc)
+│   │   ├── pages/
+│   │   │   ├── Home/
+│   │   │   ├── Following/
+│   │   │   ├── Profile/
+│   │   │   └── Upload/
+│   │   ├── hooks/                    # custom hooks (useVideoAutoPlay, useInfiniteScroll,…)
+│   │   ├── utils/                    # helper functions (formatNumber, fetchMockData,…)
+│   │   ├── data/                     # dữ liệu mẫu (videos, users, tags,…)
+│   │   ├── App.jsx
+│   │   ├── routes.jsx                # định nghĩa routing
+│   │   └── index.jsx                 # render vào DOM
+│   ├── .gitignore
+│   ├── package.json
+│   ├── README.md
+│   └── tsconfig.json?                # TypeScript config
+└── README.md                         # mô tả tổng thể repository
+
 
 
 **Lưu ý**: 
