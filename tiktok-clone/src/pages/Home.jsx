@@ -20,7 +20,7 @@ const Home = () => {
         }}
       >
         <Typography variant="h5" sx={{ mb: 2, fontWeight: 700 }}>
-          TikTok Clone - Layout Hoàn Chỉnh
+          TikTok  - Main Layout
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
           Giao diện đã được xây dựng với đầy đủ các component:
@@ -56,7 +56,13 @@ const Home = () => {
           }}
         >
           <Typography variant="body2" color="text.secondary">
-            📝 Bước tiếp theo: Xây dựng Video Card & Video Feed
+            📝 Bước tiếp theo: 
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            ✅ Xây dựng Video Card & Video Feed
+          </Typography>
+          <Typography variant="body2" sx={{ mb: 1 }}>
+            ✅ Side menu bên phải
           </Typography>
         </Box>
       </Paper>
