@@ -1,19 +1,21 @@
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { tiktokTheme } from './theme/theme';
-import MainLayout from './components/Layout/MainLayout';
-import Home from './pages/Home';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import MainLayout from './components/layout/MainLayout'
+import Home from './pages/Home'
+import Following from './pages/Following'
+import VideoDetail from './pages/VideoDetail'
+import Profile from './pages/Profile'
 
-function App() {
-  return (
-    <ThemeProvider theme={tiktokTheme}>
-      <CssBaseline />
-      <MainLayout>
-        <Home />
-      </MainLayout>
-    </ThemeProvider>
-  );
+
+export default function App() {
+return (
+<Routes>
+<Route path="/" element={<MainLayout />}>
+<Route index element={<Home />} />
+<Route path="following" element={<Following />} />
+<Route path="video/:id" element={<VideoDetail />} />
+<Route path="profile/:username" element={<Profile />} />
+</Route>
+</Routes>
+)
 }
-
-export default App;

@@ -1,0 +1,12 @@
+:root{
+--sidebar-width: 260px;
+}
+html,body,#root{height:100%;}
+body{font-family: Inter, Roboto, sans-serif}
+
+
+/* basic scroll for feed */
+.feed-scroll{
+max-width: 900px;
+margin: 0 auto;
+}

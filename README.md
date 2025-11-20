@@ -23,29 +23,40 @@ tiktok-clone/
 │   ├── index.html
 │   └── assets/
 │
-├── src/
-│   ├── assets/                # icon, hình, video mock
+│   src/
 │   ├── components/
-│   │   ├── Layout/
-│   │   ├── Header/
-│   │   ├── SidebarLeft/
-│   │   ├── SidebarRight/
-│   │   ├── VideoCard/
-│   │   ├── VideoPlayer/
-│   │   └── common/
+│   │    ├── layout/
+│   │    │     ├── Sidebar/
+│   │    │     │    ├── Sidebar.jsx
+│   │    │     │    └── SidebarItem.jsx
+│   │    │     ├── Header/
+│   │    │     │    └── Header.jsx
+│   │    │     └── MainLayout.jsx
+│   │    ├── video/
+│   │    │     ├── VideoCard.jsx
+│   │    │     └── VideoPlayer.jsx
+│   │    ├── common/
+│   │    │     ├── UserCard.jsx
+│   │    │     ├── FollowButton.jsx
+│   │    │     └── Loading.jsx
+│   │    └── ...
 │   │
 │   ├── pages/
-│   │   ├── Home/
-│   │   ├── Following/
-│   │   ├── Profile/
-│   │   └── Upload/
+│   │    ├── Home/
+│   │    │     └── Home.jsx
+│   │    ├── Following/
+│   │    │     └── Following.jsx
+│   │    ├── VideoDetail/
+│   │    │     └── VideoDetail.jsx
+│   │    └── Profile/
+│   │          └── Profile.jsx
 │   │
-│   ├── hooks/                 # useVideoAutoPlay, useDebounceSearch, …
-│   ├── utils/                 # formatNumber, mock functions, …
-│   ├── data/                  # mock video/user data
-│   ├── App.jsx
-│   ├── routes.jsx
-│   └── index.jsx
+│   ├── routers/
+│   │    └── AppRouter.jsx
+│   │
+│   ├── assets/
+│   ├── utils/
+│   └── App.jsx
 │
 ├── .gitignore
 ├── package.json
